@@ -19,7 +19,7 @@ bundle install
 
 3. Run the specs
 ```
-GTS_HOST="https://gitorious.local" GTS_USER=test GTS_PASS=test123 bundle exec rspec
+GTS\_HOST="https://gitorious.local" GTS\_USER=test GTS\_PASS=test123 bundle exec rspec
 ```
 
 ### Notes
@@ -30,9 +30,9 @@ It is safe to run the tests against the same user, as new keys are generated on 
 
 ### Defaults:
 
- * GTS_HOST defaults to `http://vagrant`
+ * GTS\_HOST defaults to `http://vagrant`
 
- * GTS_USER defaults to `test`
+ * GTS\_USER defaults to `test`
 
- * GTS_PASS defaults to `testest`
+ * GTS\_PASS defaults to `testest`
 
