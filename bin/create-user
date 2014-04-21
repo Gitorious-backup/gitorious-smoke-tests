@@ -1,0 +1,6 @@
+#!/bin/sh -e
+
+GTS_USER=${GTS_USER:-test}
+GTS_PASS=${GTS_USER:-testtest}
+
+ssh $1 "sudo -i /var/www/gitorious/app/bin/create-user $GTS_USER@example.com $GTS_USER $GTS_PASS n"
