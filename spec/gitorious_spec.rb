@@ -2,12 +2,10 @@ require 'spec_helper'
 
 feature 'Gitorious' do
   scenario 'Logging in' do
-    user = 'test'
-    password = 'testtest'
     name = gen_name
     key = KeyPair.generate
 
-    login_page.login(user, password)
+    login_page.login
 
     keys_page.upload_public_key(key)
 
