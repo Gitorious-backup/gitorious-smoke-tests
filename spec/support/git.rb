@@ -1,26 +1,29 @@
-class Git < Struct.new(:name, :origin)
+class Git < Struct.new(:name, :origin, :key)
   def clone
-    `git clone #{origin} #{path}
-     cd #{path}
-     git config user.email test@gitorious.org
-     git config user.name "Gitorious Smoke Test"`
-  end
-
-  def path(*parts)
-    ["tmp", name].concat(parts).join("/")
+    git("clone #{origin} #{path}", ".")
+    git("config user.email test@gitorious.org")
+    git("config user.name 'Gitorious Smoke Test'")
   end
 
   def add_file(files = {})
     files.each do |file, contents|
       File.write(path(file), contents)
     end
-    `cd #{path}
-     git add --all
-     git commit -m "Add files"`
+    git("add --all")
+    git("commit -m 'Add files'")
   end
 
   def push
-    `cd #{path}
-     git push origin master`
+    git("push origin master")
+  end
+
+  private
+
+  def path(*parts)
+    ["tmp", name].concat(parts).join("/")
+  end
+
+  def git(cmd, dir = path)
+    `cd #{dir} && GIT_SSH=#{key.script_path} git #{cmd}`
   end
 end

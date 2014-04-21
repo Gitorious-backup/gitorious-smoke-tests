@@ -9,7 +9,7 @@ class ProjectPage
     click_button "Save"
     click_button "Create repository"
 
-    using_wait_time 15 do
+    using_wait_time 3 * Capybara.default_wait_time do
       find(".gts-current-repo-url").value
     end
   end

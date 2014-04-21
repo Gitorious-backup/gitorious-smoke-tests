@@ -4,15 +4,16 @@ feature 'Gitorious' do
   scenario 'Logging in' do
     user = 'test'
     password = 'testtest'
+    name = gen_name
+    key = KeyPair.generate
 
     login_page.login(user, password)
 
-    keys_page.upload_public_key
+    keys_page.upload_public_key(key)
 
-    name = gen_name
     origin = project_page.create_repository(name)
 
-    git = Git.new(name, origin)
+    git = Git.new(name, origin, key)
     git.clone
     git.add_file(foo: 'a new file')
     git.push
