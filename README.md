@@ -30,7 +30,7 @@ GTS\_HOST="https://gitorious.local" GTS\_USER=test GTS\_PASS=test123 bundle exec
 
 You need to create first user manually, because public registration is not enabled by default.
 
-It is safe to run the tests against the same user, as new keys are generated on each run.
+It is safe to run the tests against the same user multiple times, as new keys are generated on each run.
 
 ### Defaults for specs and bin/create-user:
 
