@@ -1,6 +1,6 @@
 class KeyPair < Struct.new(:name)
   def self.generate
-    key = new(SecureRandom.hex)
+    key = new(gen_name)
     key.generate_key
     key.generate_git_ssh
     key

@@ -22,7 +22,3 @@ feature 'Gitorious' do
     repository_page.should_include_file('foo')
   end
 end
-
-def gen_name
-  SecureRandom.hex
-end
