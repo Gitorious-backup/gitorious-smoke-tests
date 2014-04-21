@@ -6,6 +6,11 @@ require 'capybara-screenshot'
 require 'capybara-screenshot/rspec'
 require 'securerandom'
 
+require 'support/page'
+require 'support/git'
+require 'support/key_pair'
+require 'support/pages/repository_page.rb'
+
 host = ENV['HOST'] || 'http://vagrant:3000'
 
 Capybara.default_driver = :poltergeist
