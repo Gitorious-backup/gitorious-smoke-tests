@@ -19,7 +19,7 @@ bundle install
 
   * Manually
 
-  * Or with `GTS_USER="test" GTS_PASS="test123" bin/create-user deploy@gitorious.local`
+  * Or with `GTS\_USER="test" GTS\_PASS="test123" bin/create-user deploy@gitorious.local`
 
 3. Run the specs
 ```
@@ -32,11 +32,11 @@ You need to create first user manually, because public registration is not enabl
 
 It is safe to run the tests against the same user, as new keys are generated on each run.
 
-### Defaults of specs and bin/create-user:
+### Defaults for specs and bin/create-user:
 
- * GTS\_HOST defaults to `http://vagrant`
+ * GTS\_HOST: `http://vagrant`
 
- * GTS\_USER defaults to `test`
+ * GTS\_USER: `test`
 
- * GTS\_PASS defaults to `testest`
+ * GTS\_PASS: `testest`
 
