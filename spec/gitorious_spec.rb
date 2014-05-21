@@ -1,7 +1,8 @@
 require 'spec_helper'
 
 feature 'Gitorious' do
-  scenario 'Logging in' do
+
+  scenario 'Logging in, creating project & repository, pushing' do
     name = gen_name
     key = KeyPair.generate
 
@@ -20,4 +21,5 @@ feature 'Gitorious' do
     repository_page.open(name)
     repository_page.should_include_file('foo')
   end
+
 end
