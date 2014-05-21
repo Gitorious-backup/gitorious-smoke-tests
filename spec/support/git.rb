@@ -20,6 +20,10 @@ class Git < Struct.new(:name, :origin, :key)
     git("push origin master")
   end
 
+  def head_sha
+    git("rev-parse HEAD")
+  end
+
   private
 
   def path(*parts)
