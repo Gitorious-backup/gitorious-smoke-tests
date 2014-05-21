@@ -1,11 +1,11 @@
 class ProjectPage
   include Page
 
-  def create_repository(name)
+  def create_repository(project_name)
     click_link "Projects"
     click_link "Add project"
 
-    fill_in 'project_title', with: name
+    fill_in 'project_title', with: project_name
     click_button "Save"
     click_button "Create repository"
 
