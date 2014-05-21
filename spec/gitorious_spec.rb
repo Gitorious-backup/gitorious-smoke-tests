@@ -13,6 +13,7 @@ feature 'Gitorious' do
 
     git = Git.new(name, origin, key)
     git.clone
+    git.configure_user
     git.add_file(foo: 'a new file')
     git.push
 

@@ -1,6 +1,9 @@
 class Git < Struct.new(:name, :origin, :key)
   def clone
     git("clone #{origin} #{path}", ".")
+  end
+
+  def configure_user
     git("config user.email test@gitorious.org")
     git("config user.name 'Gitorious Smoke Test'")
   end
