@@ -16,7 +16,7 @@ Capybara.register_driver :poltergeist do |app|
   Capybara::Poltergeist::Driver.new(app, phantomjs_options: ['--ignore-ssl-errors=yes'])
 end
 
-Capybara.default_driver = :poltergeist
+Capybara.default_driver = ENV['CAPYBARA_DRIVER'] ? ENV['CAPYBARA_DRIVER'].to_sym : :poltergeist
 Capybara.run_server = false
 Capybara.app_host = HOST
 Capybara.default_wait_time = 5
