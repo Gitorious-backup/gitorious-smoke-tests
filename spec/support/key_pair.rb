@@ -21,7 +21,7 @@ class KeyPair < Struct.new(:name)
   def generate_git_ssh
     script = <<-EOF
 #!/bin/sh
-ssh -o 'IdentityFile "#{key_path}"' -o 'IdentitiesOnly yes' "$@"
+ssh -o 'IdentityFile "#{key_path}"' -o 'IdentitiesOnly yes' -o 'StrictHostKeyChecking no' "$@"
     EOF
 
     File.write(script_path, script)
