@@ -37,4 +37,12 @@ feature 'Gitorious' do
     home_page.should_include_valid_js_urls
   end
 
+  scenario "Searching" do
+    login_page.login
+
+    search_page.open("żółć")
+
+    search_page.should_include_results_for("żółć")
+  end
+
 end
