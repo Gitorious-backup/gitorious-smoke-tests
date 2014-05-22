@@ -30,4 +30,11 @@ feature 'Gitorious' do
     end
   end
 
+  scenario "Asset loading" do
+    home_page.open
+
+    home_page.should_include_valid_css_urls
+    home_page.should_include_valid_js_urls
+  end
+
 end
